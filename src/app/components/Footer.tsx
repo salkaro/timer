@@ -39,7 +39,7 @@ const Footer = () => {
                 <FooterLink text="Documentation" href="https://salkaro.com/docs" />
             </FooterColumn>
 
-            {/* Contact Section */}
+            {/* Links Section */}
             <FooterColumn>
                 <FooterLink text="Is It Down?" href="https://isitdown.salkaro.com" />
                 <FooterLink text="Games" href="https://games.salkaro.com" />
