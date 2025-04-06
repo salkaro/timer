@@ -33,7 +33,7 @@ const Footer = () => {
 
             {/* Resources Section */}
             <FooterColumn>
-                <FooterLink text="Flippify" href="https://flippify.io?ref=salkaro-games" />
+                <FooterLink text="Flippify" href="https://flippify.io?ref=salkaro-timer" />
                 <FooterLink text="Discord" href="https://discord.gg/aHXVSMkmpk" />
                 <FooterLink text="Code Online" href="https://salkaro.com/write-code" />
             </FooterColumn>
