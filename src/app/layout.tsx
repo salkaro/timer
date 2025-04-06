@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "@/styles/globals.css";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
     title: "Online Timer | Salkaro",
@@ -38,6 +39,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <html lang="en">
             <body className={`antialiased w-full`}>
                 {children}
+
+                <Footer />
             </body>
         </html>
     );

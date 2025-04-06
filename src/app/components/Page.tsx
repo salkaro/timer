@@ -9,8 +9,8 @@ import { useEffect, useState } from 'react'
 
 
 const Page = () => {
-    const [isRunning, setIsRunning] = useState(false);  
-    const [timers, setTimers] = useState([{ id: 1 }]);
+    const [isRunning, setIsRunning] = useState(false);
+    const [timers, setTimers] = useState<{ id: number }[]>([]);
     const [resetCounter, setResetCounter] = useState(0);
 
     useEffect(() => {
@@ -20,7 +20,7 @@ const Page = () => {
             const { timer } = cache[key];
             return { id: parseInt(timer) };
         });
-        setTimers(newTimers);
+        setTimers(newTimers.length > 0 ? newTimers : [{ id: 1 }]); // Default to one timer if none found
     }, []);
 
     const addTimer = () => {
@@ -31,7 +31,7 @@ const Page = () => {
     function removeTimer(id: number) {
         setTimers(timers.filter(timer => timer.id !== id));
         clearCache(`timer-${id}`);
-    }  
+    }
 
     function resetTimers() {
         // Go through each timer and reset its cache (except the title)
@@ -51,6 +51,13 @@ const Page = () => {
 
     return (
         <div className='min-h-screen flex flex-col items-center p-12'>
+            {!isRunning && (
+                <div className="text-center mb-16">
+                    <h1 className='text-8xl font-bold text-gray-800 mb-2'>Online Timers</h1>
+                    <p className='text-lg'>Exam Timers, Study Timers, Countdown Timers, Stopwatch Timers</p>
+                </div>
+            )}
+
             <div className='flex flex-col items-center justify-center gap-4'>
                 {timers.map((timer) => (
                     <CountDown

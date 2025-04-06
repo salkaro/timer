@@ -1,16 +1,16 @@
 // Local Imports
 import Page from "./components/Page";
-import Footer from "./components/Footer";
+import Layout from "./components/Layout";
 
 // External Imports
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Online Timer | Salkaro",
-    description: "Exam Timers, Study Timers, and Pomodoro Timers, Countdown Timers, Stopwatch Timers, Free online timers, no ads timers, clock timers, and more.",
+    description: "Exam Timers, Study Timers, and Pomodoro Timers, Countdown Timers, Stopwatch Timers, Free online timers, clock timers, and more.",
     openGraph: {
         title: 'Online Timer | Salkaro',
-        description: 'Exam Timers, Study Timers, and Pomodoro Timers, Countdown Timers, Stopwatch Timers, Free online timers, no ads timers, clock timers, and more.',
+        description: 'Exam Timers, Study Timers, and Pomodoro Timers, Countdown Timers, Stopwatch Timers, Free online timers, clock timers, and more.',
         url: "https://isitdown.salkaro.com",
         images: [
             {
@@ -39,14 +39,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
     return (
-        <div className="flex flex-col min-h-screen w-full">
-            <main className="relative min-h-screen flex flex-col p-4 justify-center items-center overflow-x-hidden bg-white mx-0 md:mx-48 2xl:mx-96">
-                <Page />
-            </main>
-
-            <div className="w-full">
-                <Footer />
-            </div>
-        </div>
+        <Layout>
+            <Page />
+        </Layout>
     );
 }
